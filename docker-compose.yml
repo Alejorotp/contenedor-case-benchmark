@@ -1,0 +1,7 @@
+version: '3'
+services:
+  benchmark:
+    build: .
+    volumes:
+      - ./solutions:/app/solutions
+    command: sh ./run_benchmark.sh
