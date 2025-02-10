@@ -16,5 +16,5 @@ Instructivo:
 
   - docker-compose up --build
 
-Link al repositorio con lo códigos:
+Link al repositorio con los códigos:
 - https://github.com/Alejorotp/benchmark-contenedores
