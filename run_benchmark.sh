@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Verifica si la carpeta ya existe para evitar descargas innecesarias
+rm -rf solutions
 if [ ! -d "solutions" ]; then
     echo "Descargando repositorio con soluciones..."
     rm -rf solutions
@@ -25,7 +26,7 @@ for lang in solutions/*; do
         TIME_OUTPUT=$(docker run --rm "${lang_name}_benchmark")
 
         # Guardar el resultado en el archivo
-        echo "$lang_name: $TIME_OUTPUT ms" >> results.txt
+        echo "$lang_name: $TIME_OUTPUT" >> results.txt
     fi
 done
 
