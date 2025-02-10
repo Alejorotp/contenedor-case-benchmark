@@ -1,6 +1,6 @@
 Integrantes:
-Bernardo Álvarez Ciro
-Alejandro Toro Pinedo
+- Bernardo Álvarez Ciro
+- Alejandro Toro Pinedo
 
 Instructivo:
 
@@ -10,11 +10,11 @@ Instructivo:
 
 3. Correr los siguientes comandos:
 
-  git clone https://github.com/Alejorotp/contenedor-case-benchmark.git
+  - git clone https://github.com/Alejorotp/contenedor-case-benchmark.git
 
-  cd contenedor-case-benchmark
+  - cd contenedor-case-benchmark
 
-  docker-compose up --build
+  - docker-compose up --build
 
 Link al repositorio con lo códigos:
-https://github.com/Alejorotp/benchmark-contenedores
+- https://github.com/Alejorotp/benchmark-contenedores
