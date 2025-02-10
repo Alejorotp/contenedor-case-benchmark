@@ -1,7 +1,5 @@
-version: '3'
 services:
   benchmark:
     build: .
-    
     command: sh ./run_benchmark.sh
     working_dir: /app
