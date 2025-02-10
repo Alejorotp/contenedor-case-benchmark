@@ -1,16 +1,31 @@
 #!/bin/bash
-echo "Descargando repositorio con soluciones..."
-git clone https://github.com/alejorotp/benchmark-contenedores.git solutions
+
+# Verifica si la carpeta ya existe para evitar descargas innecesarias
+if [ ! -d "solutions" ]; then
+    echo "Descargando repositorio con soluciones..."
+    rm -rf solutions
+    git clone https://github.com/alejorotp/benchmark-contenedores.git solutions
+else
+    echo "Repositorio ya descargado. Usando soluciones existentes..."
+fi
+
+# Reiniciar archivo de resultados
+echo "" > results.txt
 
 echo "Ejecutando soluciones en distintos lenguajes..."
 for lang in solutions/*; do
     if [ -d "$lang" ]; then
-        echo "Ejecutando $lang..."
-        cd "$lang"
-        docker build -t "${lang}_benchmark" .
-        TIME_OUTPUT=$(docker run --rm "${lang}_benchmark")
-        echo "$lang: $TIME_OUTPUT ms" >> ../results.txt
-        cd ..
+        lang_name=$(basename "$lang")  # Extrae solo el nombre del lenguaje
+        echo "Ejecutando $lang_name..."
+
+        # Construir la imagen
+        docker build -t "${lang_name}_benchmark" "$lang"
+
+        # Ejecutar el contenedor y guardar el tiempo
+        TIME_OUTPUT=$(docker run --rm "${lang_name}_benchmark")
+
+        # Guardar el resultado en el archivo
+        echo "$lang_name: $TIME_OUTPUT ms" >> results.txt
     fi
 done
 

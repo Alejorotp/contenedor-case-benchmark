@@ -5,3 +5,6 @@ services:
     volumes:
       - ./solutions:/app/solutions
     command: sh ./run_benchmark.sh
+    working_dir: /app
+    environment:
+      - DOCKER_HOST=tcp://host.docker.internal:2375
