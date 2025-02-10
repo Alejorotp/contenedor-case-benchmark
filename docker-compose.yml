@@ -3,3 +3,6 @@ services:
     build: .
     command: sh ./run_benchmark.sh
     working_dir: /app
+    stdin_open: true
+    tty: true
+    network_mode: bridge
