@@ -1,7 +1,3 @@
-Integrantes:
-- Bernardo Álvarez Ciro
-- Alejandro Toro Pinedo
-
 Instructivo:
 
 1. Abrir Playwithdocker
