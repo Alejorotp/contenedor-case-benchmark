@@ -9,4 +9,4 @@ services:
     network_mode: bridge
     volumes:
       - .:/app
-      - /var/run/docker.sock:/var/run/docker.sock  # Agrega esto
+      - /var/run/docker.sock:/var/run/docker.sock
